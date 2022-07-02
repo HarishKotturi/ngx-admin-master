@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <span class="created-by">
       Created with ♥ by <b>Team</b> 2022
-    </span>    
+    </span>
   `,
 })
 export class FooterComponent {

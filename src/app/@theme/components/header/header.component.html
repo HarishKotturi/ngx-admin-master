@@ -5,14 +5,15 @@
     </a>
     <a class="logo" href="#" (click)="navigateHome()"><img src="assets/images/Logo.png" width="133px"/></a>
   </div>
-  <!-- <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
-    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
-  </nb-select> -->
+  <nb-actions size="medium">
+    <nb-action class="user-action">Data Screening</nb-action>
+    <nb-action class="user-action">Guidance</nb-action>
+    <nb-action class="user-action">Score</nb-action>
+  </nb-actions>
 </div>
 
 <div class="header-container">
   <nb-actions size="small">
-    
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu"
                [onlyPicture]="userPictureOnly"

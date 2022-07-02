@@ -15,14 +15,12 @@ const routes: Routes = [{
     {
       path: 'iot-dashboard',
       component: DashboardComponent,
-    },   
-    
+    },
     {
       path: 'ui-features',
       loadChildren: () => import('./ui-features/ui-features.module')
         .then(m => m.UiFeaturesModule),
-    }, 
-    
+    },
     {
       path: '',
       redirectTo: 'dashboard',

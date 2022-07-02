@@ -39,11 +39,11 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     DashboardComponent,
-    StatusCardComponent,    
+    StatusCardComponent,
     ContactsComponent,
-    RoomSelectorComponent,    
-    RoomsComponent,    
-    PlayerComponent       
+    RoomSelectorComponent,
+    RoomsComponent,
+    PlayerComponent,
   ],
 })
 export class DashboardModule { }
