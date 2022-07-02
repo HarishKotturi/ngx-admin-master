@@ -6,57 +6,60 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Layout',
+    title: 'Company information',
     icon: 'layout-outline',
     children: [
       {
-        title: 'Stepper',
+        title: 'Organisational Details',
         link: '/pages/layout/stepper',
       },
       {
-        title: 'List',
+        title: 'Economic Performance',
         link: '/pages/layout/list',
       },
       {
-        title: 'Infinite List',
+        title: 'Scope of the Report',
         link: '/pages/layout/infinite-list',
       },
       {
-        title: 'Accordion',
+        title: 'About Report',
         link: '/pages/layout/accordion',
-      },
-      {
-        title: 'Tabs',
-        pathMatch: 'prefix',
-        link: '/pages/layout/tabs',
-      },
-      {
-        title: 'Test',
-        pathMatch: 'prefix',
-        link: '/pages/layout/tabs',
       }
+ 
     ],
   },
   {
-    title: 'Auth',
+    title: 'Environment',
     icon: 'lock-outline',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
+    // children: [
+    //   {
+    //     title: 'Login',
+    //     link: '/auth/login',
+    //   },
+    //   {
+    //     title: 'Register',
+    //     link: '/auth/register',
+    //   },
+    //   {
+    //     title: 'Request Password',
+    //     link: '/auth/request-password',
+    //   },
+    //   {
+    //     title: 'Reset Password',
+    //     link: '/auth/reset-password',
+    //   },
+    // ],
   },
+  {
+    title: 'Social',
+    icon: 'lock-outline'
+  },
+  {
+    title: 'Corporate Governance',
+    icon: 'lock-outline'
+  },
+  {
+    title: 'Supply Chain Management',
+    icon: 'lock-outline'
+  }
 ];
