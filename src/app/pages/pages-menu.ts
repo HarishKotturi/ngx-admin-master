@@ -30,24 +30,42 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Environment',
     icon: 'lock-outline',
-    // children: [
-    //   {
-    //     title: 'Login',
-    //     link: '/auth/login',
-    //   },
-    //   {
-    //     title: 'Register',
-    //     link: '/auth/register',
-    //   },
-    //   {
-    //     title: 'Request Password',
-    //     link: '/auth/request-password',
-    //   },
-    //   {
-    //     title: 'Reset Password',
-    //     link: '/auth/reset-password',
-    //   },
-    // ],
+    children: [
+      {
+        title: 'General',
+        link: '/auth/login',
+      },
+      {
+        title: 'Emissions',
+        link: '/auth/register',
+        children:[
+          {
+            title: 'Policies & Targets',
+            link: '/auth/login',
+          },
+          {
+            title: 'Scope 1,2 & 3',
+            link: '/auth/login',
+          },
+          {
+            title: 'GHG List',
+            link: '/auth/login',
+          },
+        ]
+      },
+      {
+        title: 'Waste Management',
+        link: '/auth/request-password',
+      },
+      {
+        title: 'Water Management',
+        link: '/auth/reset-password',
+      },
+      {
+        title: 'Energy',
+        link: '/auth/reset-password',
+      },
+    ],
   },
   {
     title: 'Social',
