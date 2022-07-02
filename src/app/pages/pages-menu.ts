@@ -25,7 +25,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'About Report',
         link: '/pages/layout/accordion',
       }
- 
     ],
   },
   {
@@ -61,5 +60,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Supply Chain Management',
     icon: 'lock-outline'
-  }
+  },
 ];
