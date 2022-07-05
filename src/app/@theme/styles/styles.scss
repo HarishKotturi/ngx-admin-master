@@ -31,3 +31,6 @@
 
   @include nb-overrides();
 };
+.navigation .link nb-icon {
+  display: none !important;
+}
