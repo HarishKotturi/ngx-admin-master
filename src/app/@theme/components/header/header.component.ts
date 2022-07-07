@@ -5,6 +5,7 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -38,14 +39,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile Settings' },{ title: 'Change Password',link: '/auth/reset-password' },{ title: 'Feedback' }, { title: 'Log Out', link: '/auth/login' } ];
+  userMenu = [{ title: 'Profile Settings' }, { title: 'Change Password', link: '/auth/reset-password' }, { title: 'Feedback' }, { title: 'Log Out', link: '/auth/login' }];
 
   constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private themeService: NbThemeService,
-              private userService: UserData,
-              private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+    private menuService: NbMenuService,
+    private themeService: NbThemeService,
+    private userService: UserData,
+    private layoutService: LayoutService,
+    private breakpointService: NbMediaBreakpointsService,
+    protected router: Router) {
   }
 
   ngOnInit() {
@@ -90,5 +92,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  redirectURL(pageName: String) {
+    switch(pageName){
+      case "Admin":{
+        this.router.navigateByUrl("/pages/admin");
+        break;
+      }
+      default:{
+        this.router.navigateByUrl("/pages");
+      }
+    }
   }
 }

@@ -106,18 +106,39 @@ export const NB_CORE_PROVIDERS = [
   ...NbAuthModule.forRoot({
 
     strategies: [
+      // --- Uncomment once End point is ready ---
+      // NbPasswordAuthStrategy.setup({
+      //   name: 'email',
+      //   baseEndpoint: '',
+      //   login: {
+      //     endpoint: '/api/auth/login',
+      //     method: 'post',
+      //   },
+      //   register: {
+      //     endpoint: '/auth/sign-up',
+      //     method: 'post',
+      //   },
+      //   logout: {
+      //     endpoint: '/auth/sign-out',
+      //     method: 'post',
+      //   },
+      //   requestPass: {
+      //     endpoint: '/auth/request-pass',
+      //     method: 'post',
+      //   },
+      //   resetPass: {
+      //     endpoint: '/auth/reset-pass',
+      //     method: 'post',
+      //   },
+      // }),
+
+      // --- Remove NbDummyAuthStrategy - Once Endpoint intigration done
       NbDummyAuthStrategy.setup({
         name: 'email',
         delay: 3000,
-      }),
+      }), //---
     ],
     forms: {
-      login: {
-        socialLinks: socialLinks,
-      },
-      register: {
-        socialLinks: socialLinks,
-      },
     },
   }).providers,
 
