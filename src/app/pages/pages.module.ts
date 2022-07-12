@@ -6,6 +6,8 @@ import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { AdminComponent } from './admin/admin.component';
+import { SharedGridComponent } from './shared-grid/shared-grid.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   imports: [
@@ -15,11 +17,13 @@ import { AdminComponent } from './admin/admin.component';
     NbCardModule,
     NbInputModule,
     DashboardModule,
-    NbButtonModule
+    NbButtonModule,
+    TableModule
   ],
   declarations: [
     PagesComponent,
     AdminComponent,
+    SharedGridComponent,
   ],
 })
 export class PagesModule {

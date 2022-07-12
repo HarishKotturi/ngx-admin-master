@@ -34,3 +34,7 @@
 .navigation .link nb-icon {
   display: none !important;
 }
+
+nb-request-password-page > .sign-in-or-up > p:nth-child(2) {
+  display: none;
+}
