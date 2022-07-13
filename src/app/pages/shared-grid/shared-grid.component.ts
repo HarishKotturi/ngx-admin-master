@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngx-shared-grid',
@@ -7,12 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SharedGridComponent implements OnInit {
 
-  body:any[] =[];
+  body: any[] = [];
+  @Input() multiSelect: string = "single";
+  @Input() data: any[] = [];
+  @Input() rows: number = 10;
+  @Input() selection: any[];
+  @Input() pageSizeOptions = [10, 20, 30];
+  @Input() columns: any[] = [];
+  @Input() isPagenator: boolean = false;
+
 
   constructor() { }
 
   ngOnInit(): void {
-    this.body = [
+    this.columns = [
+      { field: "code", header: "Code" },
+      { field: "name", header: "Name" },
+      { field: "category", header: "Category" },
+      { field: "quantity", header: "Quantity" }
+    ]
+    this.data = [
       {
         "code": "f230fh0g3",
         "name": "Bamboo Watch",
@@ -40,4 +54,10 @@ export class SharedGridComponent implements OnInit {
     ]
   }
 
+  onRowSelect(selectedRow) {
+    console.log(selectedRow);
+  }
+  onRowUnselect(event) {
+    console.log(event);
+  }
 }
