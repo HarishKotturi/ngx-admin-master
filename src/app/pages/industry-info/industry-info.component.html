@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card class="inline-form-card">
+            <nb-card-header>Industry Creation</nb-card-header>
+            <nb-card-body>
+                <form>
+                    <div class="form-group row">
+                        <label for="txtIndustryName" class="col-sm-2 col-form-label">Industry Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" nbInput fullWidth id="txtIndustryName" [(ngModel)]="industryName"
+                            placeholder="Industry Name" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" nbButton status="primary" [disabled]="industryName == ''"
+                            (click)="saveIndustryName()">Save</button>
+                        </div>
+                    </div>
+                </form>
+                <ngx-shared-grid
+                #sharedTable
+                [columns]="columns"
+                [data]="bodyData"
+                (emitSelectedRow)="getSelectedRow($event)"
+                (emitUnSelectedRow)="getUnselectedRow($event)"
+                ></ngx-shared-grid>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

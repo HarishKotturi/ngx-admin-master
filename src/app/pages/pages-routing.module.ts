@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
+import { IndustryInfoComponent } from './industry-info/industry-info.component';
 
 const routes: Routes = [{
   path: '',
@@ -30,6 +31,10 @@ const routes: Routes = [{
     {
       path: 'admin',
       component: AdminComponent,
+    },
+    {
+      path: 'industry',
+      component: IndustryInfoComponent,
     },
     {
       path: '**',

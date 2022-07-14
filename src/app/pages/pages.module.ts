@@ -8,6 +8,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { AdminComponent } from './admin/admin.component';
 import { SharedGridComponent } from './shared-grid/shared-grid.component';
 import {TableModule} from 'primeng/table';
+import { IndustryInfoComponent } from './industry-info/industry-info.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -18,12 +20,15 @@ import {TableModule} from 'primeng/table';
     NbInputModule,
     DashboardModule,
     NbButtonModule,
-    TableModule
+    TableModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     PagesComponent,
     AdminComponent,
     SharedGridComponent,
+    IndustryInfoComponent,
   ],
 })
 export class PagesModule {

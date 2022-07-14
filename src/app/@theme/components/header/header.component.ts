@@ -100,6 +100,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.router.navigateByUrl("/pages/admin");
         break;
       }
+      case "IndustryCreation":{
+        this.router.navigateByUrl("/pages/industry");
+        break;
+      }
       default:{
         this.router.navigateByUrl("/pages");
       }

@@ -3,7 +3,7 @@
     (onRowUnselect)="onRowUnselect($event)" responsiveLayout="scroll">
     <ng-template pTemplate="header">
         <tr>
-            <ng-container *ngFor="let col of columns;let i = index">
+            <ng-container *ngFor="let col of columns;let rowIndex = index">
                 <th [pSortableColumn]="col.field">
                     <ng-container>
                         <span class="float-right">
@@ -16,7 +16,7 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
-        <tr class="row-hover" [pSelectableRow]="rowData">
+        <tr class="row-hover" [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
             <ng-container *ngFor="let col of columns">
                 <td>
                     {{rowData[col.field]}}
