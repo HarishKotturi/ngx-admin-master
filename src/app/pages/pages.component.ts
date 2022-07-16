@@ -6,6 +6,8 @@ import { MENU_ITEMS } from './pages-menu';
   selector: 'ngx-pages',
   styleUrls: ['pages.component.scss'],
   template: `
+    <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    <p-toast></p-toast>
     <ngx-one-column-layout>
       <nb-menu [items]="menu"></nb-menu>
       <router-outlet></router-outlet>

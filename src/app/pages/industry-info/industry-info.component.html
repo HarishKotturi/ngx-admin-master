@@ -22,6 +22,10 @@
                 [data]="bodyData"
                 (emitSelectedRow)="getSelectedRow($event)"
                 (emitUnSelectedRow)="getUnselectedRow($event)"
+                (emitDeleteRowEvent)="deleteSelectedIndustry($event)"
+                [globalFilters]="['industryName']"
+                [isFilterReq]="true"
+                [isInlineDeleteReq]="true"
                 ></ngx-shared-grid>
             </nb-card-body>
         </nb-card>

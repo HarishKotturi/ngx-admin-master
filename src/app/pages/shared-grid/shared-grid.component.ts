@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ngx-shared-grid',
@@ -15,8 +15,15 @@ export class SharedGridComponent implements OnInit {
   @Input() selection: any[];
   @Input() pageSizeOptions = [10, 20, 30];
   @Input() isPagenator: boolean = false;
+
+  @Input() isFilterReq:boolean = false; // Pass true to enable filter
+  @Input() globalFilters:any[] = []; // pass Filter fields -- isFilterReq and globalFilters are required
+  @Input() isInlineDeleteReq:boolean = false;
+
+
   @Output() emitSelectedRow = new EventEmitter<any>();
   @Output() emitUnSelectedRow = new EventEmitter<any>();
+  @Output() emitDeleteRowEvent = new EventEmitter<any>();
 
 
   constructor() { }
@@ -61,5 +68,9 @@ export class SharedGridComponent implements OnInit {
   }
   onRowUnselect(unselectedRow) {
     this.emitUnSelectedRow.emit(unselectedRow);
+  }
+
+  deleteRowData(event) {
+    this.emitDeleteRowEvent.emit(event);
   }
 }

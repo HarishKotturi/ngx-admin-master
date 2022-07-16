@@ -16,3 +16,11 @@
     }
   }
 }
+:host ::ng-deep {
+  .p-toast{
+    z-index:1500 !important;
+  }
+  .p-datatable .p-datatable-tbody > tr > td{
+    padding: 0.25rem;
+  }
+}

@@ -10,6 +10,13 @@ import { SharedGridComponent } from './shared-grid/shared-grid.component';
 import {TableModule} from 'primeng/table';
 import { IndustryInfoComponent } from './industry-info/industry-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ButtonModule } from 'primeng/button';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import {DialogModule} from 'primeng/dialog';
+import {ToastModule} from 'primeng/toast';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -22,7 +29,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbButtonModule,
     TableModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    InputTextModule,
+    ConfirmDialogModule,
+    ButtonModule,
+    DialogModule,
+    ToastModule,
+    HttpClientModule,
   ],
   declarations: [
     PagesComponent,
@@ -30,6 +43,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedGridComponent,
     IndustryInfoComponent,
   ],
+  providers:[
+    ConfirmationService,
+    MessageService
+  ]
 })
 export class PagesModule {
 }
