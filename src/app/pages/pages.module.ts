@@ -17,6 +17,8 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
 import {ToastModule} from 'primeng/toast';
 import { HttpClientModule } from '@angular/common/http';
+import { SectorInfoComponent } from './sector-info/sector-info.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   imports: [
@@ -36,12 +38,14 @@ import { HttpClientModule } from '@angular/common/http';
     DialogModule,
     ToastModule,
     HttpClientModule,
+    DropdownModule,
   ],
   declarations: [
     PagesComponent,
     AdminComponent,
     SharedGridComponent,
     IndustryInfoComponent,
+    SectorInfoComponent,
   ],
   providers:[
     ConfirmationService,

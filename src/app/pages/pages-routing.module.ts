@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
 import { IndustryInfoComponent } from './industry-info/industry-info.component';
+import { SectorInfoComponent } from './sector-info/sector-info.component';
 
 const routes: Routes = [{
   path: '',
@@ -35,6 +36,10 @@ const routes: Routes = [{
     {
       path: 'industry',
       component: IndustryInfoComponent,
+    },
+    {
+      path: 'sector',
+      component: SectorInfoComponent,
     },
     {
       path: '**',

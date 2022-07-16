@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+            <nb-card-header>Sector Creation</nb-card-header>
+            <nb-card-body>
+                <form>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="industryName">Industry Name</label>
+                        <p-dropdown id="industryName" appendTo="body" styleClass="form-control" [options]="industriesList"
+                            [(ngModel)]="selectedIndustry" [ngModelOptions]="{standalone: true}" [itemSize]="2" optionLabel="name" [filter]="true"></p-dropdown>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputSectorName">Sector Name</label>
+                        <input type="text" class="form-control" id="inputSectorName" [ngModelOptions]="{standalone: true}" [(ngModel)]="sectorName" placeholder="Sector Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="inputSectorDesc">Sector Description</label>
+                        <textarea class="form-control" id="inputSectorDesc" rows="3"></textarea>
+                    </div>
+                </div>
+                <button type="button" nbButton status="primary" [disabled]="sectorName == ''">Save</button>
+            </form>
+<br>
+
+                <ngx-shared-grid
+                    #sharedTable
+                    [columns]="columns"
+                    [data]="bodyData"
+                    (emitSelectedRow)="getSelectedRow($event)"
+                    (emitUnSelectedRow)="getUnselectedRow($event)"
+                    (emitDeleteRowEvent)="deleteSelectedIndustry($event)"
+                    [globalFilters]="['industryName']"
+                    [isFilterReq]="true"
+                    [isInlineDeleteReq]="true"
+                ></ngx-shared-grid>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
