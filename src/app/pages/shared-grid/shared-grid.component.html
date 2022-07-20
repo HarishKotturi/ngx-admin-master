@@ -12,7 +12,7 @@
     <ng-template pTemplate="header">
         <tr>
             <ng-container *ngFor="let col of columns;let rowIndex = index">
-                <th [pSortableColumn]="col.field">
+                <th [pSortableColumn]="col.field" [ngStyle]="{'display': checkTHTDDisplay(col)}">
                     <ng-container>
                         <span class="float-right">
                             <p-sortIcon class="reverse-sort-icon" [field]="col.field"></p-sortIcon>
@@ -27,7 +27,7 @@
     <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
         <tr class="row-hover" [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
             <ng-container *ngFor="let col of columns">
-                <td>
+                <td [ngStyle]="{'display': checkTHTDDisplay(col)}">
                     {{rowData[col.field]}}
                 </td>
             </ng-container>

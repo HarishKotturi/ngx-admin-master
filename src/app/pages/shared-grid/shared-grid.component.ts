@@ -16,9 +16,9 @@ export class SharedGridComponent implements OnInit {
   @Input() pageSizeOptions = [10, 20, 30];
   @Input() isPagenator: boolean = false;
 
-  @Input() isFilterReq:boolean = false; // Pass true to enable filter
-  @Input() globalFilters:any[] = []; // pass Filter fields -- isFilterReq and globalFilters are required
-  @Input() isInlineDeleteReq:boolean = false;
+  @Input() isFilterReq: boolean = false; // Pass true to enable filter
+  @Input() globalFilters: any[] = []; // pass Filter fields -- isFilterReq and globalFilters are required
+  @Input() isInlineDeleteReq: boolean = false;
 
 
   @Output() emitSelectedRow = new EventEmitter<any>();
@@ -62,6 +62,9 @@ export class SharedGridComponent implements OnInit {
     //   }
     // ]
   }
+  ngOnChanges(){
+
+  }
 
   onRowSelect(selectedRow) {
     this.emitSelectedRow.emit(selectedRow);
@@ -72,5 +75,12 @@ export class SharedGridComponent implements OnInit {
 
   deleteRowData(event) {
     this.emitDeleteRowEvent.emit(event);
+  }
+  checkTHTDDisplay(col: any) {
+    if (col.hasOwnProperty('display') && col['display'] == "hide") {
+      return "none";
+    } else {
+      return "table-cell";
+    }
   }
 }
